@@ -29,16 +29,15 @@ import org.osiam.client.OsiamConnector;
 import org.osiam.client.oauth.AccessToken;
 import org.osiam.client.oauth.Scope;
 import org.osiam.resources.scim.User;
-import org.vertx.java.core.Handler;
-import org.vertx.java.core.MultiMap;
-import org.vertx.java.core.Vertx;
-import org.vertx.java.core.VertxFactory;
-import org.vertx.java.core.http.HttpServerRequest;
+import io.vertx.core.Handler;
+import io.vertx.core.MultiMap;
+import io.vertx.core.Vertx;
+import io.vertx.core.http.HttpServerRequest;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Vertx vertx = VertxFactory.newVertx();
+        Vertx vertx = Vertx.vertx();
         vertx.createHttpServer().requestHandler(new Handler<HttpServerRequest>() {
 
             OsiamConnector oConnector = new OsiamConnector.Builder()
