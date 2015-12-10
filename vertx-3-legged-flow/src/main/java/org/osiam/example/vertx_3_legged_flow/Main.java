@@ -75,8 +75,8 @@ public class Main {
                         req.response()
                                 .write("<html><head><link rel='stylesheet' type='text/css' href='bootstrap.min.css'/>"
                                         + "<link rel='stylesheet' type='text/css' href='style.css'/></head>"
-                                        + "<body><div class='container'><h1>Hello " + user.getName().getGivenName()
-                                        + " " + user.getName().getFamilyName() + "</h1><br />Your AccessToken: "
+                                       + "<body><div class='container'><h1>Hello " + (user.getName() == null ? null : user.getName().getGivenName())
+                                        + " " + (user.getName() == null ? null : user.getName().getFamilyName()) + "</h1><br />Your AccessToken: "
                                         + accessToken.getToken() + "</div></body></html>", "UTF-8").end();
                     }
                 }
