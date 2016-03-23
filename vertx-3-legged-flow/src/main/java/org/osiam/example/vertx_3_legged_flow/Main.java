@@ -65,7 +65,7 @@ public class Main {
                         User user;
                         try {
                             accessToken = oConnector.retrieveAccessToken(code);
-                            user = oConnector.getCurrentUser(accessToken);
+                            user = oConnector.getMe(accessToken);
                         } catch (Exception e) {
                             req.response().setChunked(true).write("An error happened: " + e).end();
                             return;
